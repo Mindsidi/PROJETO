@@ -13,9 +13,9 @@ void main()
     for (i=0;i<=10;i++) {
         resultados[i]=1;
     }
-    FILE* arqNome=fopen("C:/Users/G/Desktop/nomes.txt", "r");
+    FILE* arqNome=fopen("C:/Users/UFRNLAB/Desktop/nomes.txt", "r");
 
-    while (fscanf(arqNome, "%d %d %d %[^\n]s", &entrada1, &entrada2, &saida, nome)!=EOF) {
+    while (fscanf(arqNome, "%s %d %d %d", nome, &entrada1, &entrada2, &saida)!=EOF) {
         local1=resultados[entrada1];
         local2=resultados[entrada2];
         for (i=0;i<=TAMNOME;i++) {
@@ -29,7 +29,7 @@ void main()
                 }
             }
             //O do OR TÁ OK
-            if(nome[i]=='o' && nome[i+1]=='r' && nome[i-1]!='x' && nome[i-1]!='n'){
+            if(nome[i]=='o' && nome[i+1]=='r' && nome[i-1]!='x' && nome[i-1]!='n' && nome[i-1]!='x'){
                 if(local1+local2>=1){
                     resultados[saida]=1;
                     printf("krl");
@@ -76,8 +76,9 @@ void main()
             }
 
         }
-        printf("%d %d %d %s\n", entrada1, entrada2, saida, nome);
-        printf("%d", resultados[5]);
+        printf("%s %d %d %d\n", nome, entrada1, entrada2, saida);
+
     }
     fclose(arqNome);
 }
+
