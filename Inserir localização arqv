@@ -1,0 +1,17 @@
+// =
+#include <stdio.h>
+
+int main()
+
+{
+    char arqNome [70];
+   puts("Digite o endereço completo do arquivo");
+   scanf("%s", &arqNome);
+   
+    
+ //   FILE* arqNome=fopen("C:/Users/Fernando/Desktop/nomes.txt", "r");
+
+
+  puts(arqNome);
+   return 0;
+}
